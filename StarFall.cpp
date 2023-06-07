@@ -74,6 +74,8 @@ int main()
     sf::Text BulletText;
     std::vector<sf::RectangleShape> bullets;
     sf::RectangleShape bullet;
+    vector< CircleShape> stars;
+    vector<float> speeds;
 
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Starfall");
 
@@ -107,11 +109,9 @@ int main()
     
     window.setFramerateLimit(60);
 
-     srand(static_cast<unsigned int>( time(NULL)));
+    srand(static_cast<unsigned int>( time(NULL)));
     
-     vector< CircleShape> stars;
     stars.reserve(STAR_COUNT);
-     vector<float> speeds;
     speeds.reserve(STAR_COUNT);
 
     for (int i = 0; i < STAR_COUNT; ++i) {

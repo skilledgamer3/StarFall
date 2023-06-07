@@ -104,9 +104,6 @@ int main()
     BulletText.setPosition(Vector2f(window.getSize().y - 150, 10.0f));
 
 
-
-
-    
     window.setFramerateLimit(60);
 
     srand(static_cast<unsigned int>( time(NULL)));
@@ -141,20 +138,6 @@ int main()
      player.setOutlineThickness(10);
 
 
-    
-
-      
-
-      /* bullet.setSize(Vector2f(20.0f, 40.0f));
-       bullet.setPosition( player.getPosition());
-       bullet.setFillColor( Color::Red);
-       bullets.push_back( bullet);
-      cout << "Spawn";*/
-   
-
-     
-
-
 
     while (window.isOpen())
     {
@@ -167,6 +150,7 @@ int main()
 
         //updating happens here
 
+        //if mul = false
         //movement
         if ( Keyboard::isKeyPressed( Keyboard::W) ||  Keyboard::isKeyPressed( Keyboard::Up) && player.getPosition().y > 0)
             player.move(0, -speed);
@@ -176,6 +160,9 @@ int main()
             player.move(-speed, 0);
         if ( Keyboard::isKeyPressed( Keyboard::D) ||  Keyboard::isKeyPressed( Keyboard::Right) && player.getPosition().x < window.getSize().x)
             player.move(speed, 0);
+
+
+
 
         if ( enemies.size() <  maxEnemies)
         {
@@ -267,6 +254,8 @@ int main()
         }
 
         window.clear();
+
+
         for (auto& e : bullets)
         {
             window.draw(e);
